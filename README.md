@@ -1,2 +1,2 @@
 # ShurYan-Frontend
-eact-based frontend for Shuryan healthcare platform
+React-based frontend for Shuryan healthcare platform
