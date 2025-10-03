@@ -1,0 +1,135 @@
+/* Base styles and variables */
+:root {
+  /* Primary Colors & Gradients */
+  --primary-turquoise: #00A89C;
+  --primary-dark: #008B82;
+  --primary-light: #1FBDB1;
+  --gradient-primary: linear-gradient(135deg, #00A89C 0%, #00C4B6 50%, #1FBDB1 100%);
+  --gradient-primary-dark: linear-gradient(135deg, #008B82 0%, #00A89C 50%, #009B8F 100%);
+  
+  /* Accent & Secondary */
+  --secondary-teal: #006778;
+  --secondary-mint: #5FCBAF;
+  
+  /* Neutral Colors */
+  --neutral-dark: #0f172a; /* Updated to match the required dark color */
+  --neutral-medium: #4A5B62;
+  --neutral-light: #7A8B92;
+  --neutral-lighter: #E8F0F2;
+  --neutral-lightest: #ffffff; /* Changed to pure white for the card */
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 168, 156, 0.08);
+  --shadow-md: 0 8px 25px rgba(0, 168, 156, 0.12);
+  --shadow-lg: 0 20px 40px rgba(26, 43, 50, 0.15);
+}
+
+/* Utility classes */
+.bg-neutral-dark { background-color: var(--neutral-dark); }
+.bg-neutral-lightest { background-color: var(--neutral-lightest); }
+.bg-neutral-lighter { background-color: var(--neutral-lighter); }
+.text-neutral-dark { color: var(--neutral-dark); }
+.text-neutral-medium { color: var(--neutral-medium); }
+.text-neutral-light { color: var(--neutral-light); }
+.text-primary-dark { color: var(--primary-dark); }
+.border-neutral-lighter { border-color: var(--neutral-lighter); }
+
+
+/* Custom styles */
+.input-focus:focus {
+  border-color: var(--primary-turquoise);
+  box-shadow: 0 0 0 3px rgba(0, 168, 156, 0.2);
+  background-color: white;
+}
+
+.shuryan-btn {
+  background-image: var(--gradient-primary);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.shuryan-btn:hover {
+  background-image: var(--gradient-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 168, 156, 0.15);
+}
+
+.google-btn {
+  background-color: #FFFFFF;
+  color: var(--neutral-dark);
+  border: 1px solid var(--neutral-lighter);
+  transition: all 0.3s ease;
+}
+
+.google-btn:hover {
+  border-color: var(--neutral-light);
+  box-shadow: 0 4px 12px rgba(26, 43, 50, 0.08);
+}
+
+/* Particle canvas */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Ensure main content is above particle canvas */
+main {
+  z-index: 1;
+  position: relative;
+  background-color: transparent; /* Ensure the card background is not affected */
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .lg\:rounded-l-2xl {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+  }
+  
+  .lg\:rounded-r-2xl {
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+}
+
+/* Specific styles for login page - add horizontal padding */
+.login-page main,
+.register-page main {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Add horizontal padding on larger screens for login and register pages only */
+@media (min-width: 1024px) {
+  .login-page main,
+  .register-page main {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .login-page main,
+  .register-page main {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .login-page main,
+  .register-page main {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
